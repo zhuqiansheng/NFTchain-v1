@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "XuperClient.host",
+      "type": "java.lang.String",
+      "description": "Description for XuperClient.host."
+  }
+] }

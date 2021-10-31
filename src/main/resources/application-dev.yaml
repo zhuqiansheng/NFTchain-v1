@@ -1,0 +1,69 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    threads:
+      max: 200
+      min-spare: 30
+    connection-timeout: 5000ms
+  port: 8080
+  servlet:
+    context-path: /nft-api
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: abc123456
+      initial-size: 10
+      max-active: 20
+      min-idle: 8
+      max-wait: 60000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /nft-api/*
+        reset-enable: true
+        login-username: admin
+        login-password: admin
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: ustc.nftchainv1.domain.pojo
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+XuperClient:
+  host: localhost
+  port: 37101
+  contractAccount: XC1000000000000000@xuper
+  keysPath: /Users/sens/Documents/key/xuperChain/keys
+
+IPFS:
+  host: localhost
+  port: 5001
+
+
+swagger:
+  title: NTF Trading platform API
+  version: 1
+  base-package: ustc.nftchainv1.controller
+  base-path: /**
+
+#rabbitmq
+rabbitmq:
+  host: 42.192.10.234
+  port: 5672
+
+
+logging:
+  level:
+    root: info
+    ustc.nftchainv1.domain.dao: warn
+  pattern:
+    console: "%d{HH:mm:ss}  %-5level  %msg%n"
