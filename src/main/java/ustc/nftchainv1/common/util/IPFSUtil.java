@@ -64,7 +64,6 @@ public class IPFSUtil {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
             }
         }
     }

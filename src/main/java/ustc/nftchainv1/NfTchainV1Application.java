@@ -7,10 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.scheduling.annotation.EnableAsync;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-import ustc.nftchainv1.common.util.XchainUtil;
-
-import javax.annotation.PostConstruct;
-import java.io.IOException;
 
 @EnableSwagger2
 @SpringBootApplication
