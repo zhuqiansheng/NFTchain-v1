@@ -5,7 +5,7 @@ server:
       max: 200
       min-spare: 30
     connection-timeout: 5000ms
-  port: 8080
+  port: 8081
   servlet:
     context-path: /nft-api
 
@@ -24,49 +24,19 @@ spring:
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
-      stat-view-servlet:
-        enabled: true
-        url-pattern: /nft-api/*
-        reset-enable: true
-        login-username: admin
-        login-password: admin
 
-mybatis:
-  mapper-locations: classpath*:mapper/*.xml
-  type-aliases-package: ustc.nftchainv1.domain.pojo
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    map-underscore-to-camel-case: true
 
 XuperClient:
   host: 42.192.10.234
   port: 37101
   contractAccount: XC1000000000000000@xuper
-  keysPath: /root/xuperchain/output/data/keys
-
-IPFS:
-  host: localhost
-  port: 5001
-
-jwt:
-  #秘钥
-  secret: abc123456
-  #令牌过期时间（天）
-  expire: 3
-  #令牌缓存过期时间（天）
-  cache-expire: 7
-
+  keysPath: /Users/sens/Documents/key/xuperChain/keys
 
 swagger:
   title: NTF Trading platform API
   version: 1
   base-package: ustc.nftchainv1.controller
   base-path: /**
-
-#rabbitmq
-rabbitmq:
-  host: 42.192.10.234
-  port: 5672
 
 
 logging:

@@ -14,9 +14,8 @@ import java.io.IOException;
 public class IPFSUtil {
     @Autowired
     private static IPFSConfig ipfsConfig;
+    private static IPFS ipfs = ipfsConfig.IPFS();
 
-
-    public static IPFS ipfs = ipfsConfig.IPFS();
     public static String upload(String fileName) throws IOException {
         NamedStreamable.FileWrapper file = new NamedStreamable.FileWrapper(new File(fileName));
         MerkleNode addResult = ipfs.add(file).get(0);

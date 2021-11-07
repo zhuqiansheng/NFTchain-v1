@@ -17,7 +17,7 @@ import java.util.Map;
 public class XChainServiceImpl implements XChainService {
 
     @Autowired
-    private  FileUtil fileUtil;
+    private FileUtil fileUtil;
     @Autowired
     private XuperClientConfig xuperClientConfig;
 

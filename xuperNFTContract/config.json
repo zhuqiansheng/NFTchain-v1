@@ -1,0 +1,9 @@
+{
+  "language": "solidity",
+  "main": "./main/xuperNFT.sol",
+  "deploy": "./main/xuperNFT.bin",
+  "compilers": {
+    "xdev": "",
+    "solc": "0.8.9"
+  }
+}
